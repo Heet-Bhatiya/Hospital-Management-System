@@ -1,0 +1,102 @@
+<?php
+include('connect.php');
+if(isset($_POST['submit']))
+{
+  $name=$_POST['name'];
+  $number=$_POST['number'];
+  $email=$_POST['email'];
+  $doctor=$_POST['doctor'];
+  $datetime=$_POST['datetime'];
+  $reason=$_POST['reason'];
+  $query = mysqli_query($con , "INSERT INTO `patient.information`(`name`, `number`, `email`, `doctor`, `datetime`, `reason`) VALUES ('$name','$number','$email','$doctor','$datetime','$reason')");
+}                        
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Appointment.css">
+    <title>Appointment Page | HealthCare</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <h1>Welcome to HealthCare Hospital</h1>
+        <div class="form-container appointment-form">
+            <form action="appointment.php" method="POST">
+
+                <h2>Book An Appointment</h2>
+            
+                <span>Provide Correct Details For Appointment.</span>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="tel" name="number" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                
+                <div class="select-container">
+                    <form>
+                
+                        <label for="Select Your Disease:"></label>
+                        <select id="disease" name="doctor">
+                
+                           
+                
+                            <optgroup label="Cardiologist">
+                                <option value="Dr.Smith">Dr.Smith</option>
+                            </optgroup>
+                
+                            <optgroup label="Neurologist">
+                                <option value="Dr Vraj shah">Dr.Vraj shah</option>
+                            </optgroup>
+                
+                            <optgroup label="Kidney specialist">
+                            <option value="Dr Sanjay Singh">Dr.Sanjay Singh</option>
+                            </optgroup>
+                
+                            <optgroup label="Psychiatrist">
+                                <option value="Dr Vijay Mehta">Dr.Vijay Mehta</option>
+                            </optgroup>
+                
+                            <optgroup label="Surgeon  ">
+                                <option value="Dr Jimil Gohil">Dr.Jimil Gohil</option>
+                            </optgroup>
+                
+                            <optgroup label="Dentist">
+                                <option value="Dr Satish Pandya">Dr.Satish Pandya</option>
+                            </optgroup>
+                
+                            <optgroup label="Gynecologist">
+                                <option value="Dr ishani sharma">Dr.ishani sharma</option>
+                            </optgroup>
+                
+                            <optgroup label="Orthopaedist">
+                                <option value="Dr Ashok bhatt">Dr.Ashok bhatt</option>
+                              </optgroup>
+                
+                                <optgroup label="Pathologist">
+                                  <option value="Dr Mohan Sharma">Dr.Rahul Patel</option>
+                            </optgroup>
+                
+                        </select>
+                      </div>
+                      
+                        
+                    
+                    <label for="appointment_datetime">Appointment Date and Time:</label>
+                    <input type="datetime-local" id="appointment_datetime" name="datetime" required>
+
+                <label for="reason">Reason for Appointment:</label>
+                <textarea id="reason" name="reason" placeholder="Describe your reason for the appointment..." rows="4" required></textarea>
+
+                <button type="submit" name="submit">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Appointment.js"></script>
+</body>
+
+</html>

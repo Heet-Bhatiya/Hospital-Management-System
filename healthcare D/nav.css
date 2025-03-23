@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    margin: 0px 0px;
+    align-items: center;
+    height: 76px;
+    flex-wrap: wrap;
+
+}
+.navbar ul{
+    display: flex;
+}
+.navbar li{
+    padding: 23px;
+    margin-left:0px;
+    list-style: none;
+   
+}
+.logoimg{
+    position: absolute;
+    margin-top :10px;   
+}
+.navbar a{
+    margin: 0px 5.7px;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    color: rgb(0, 0, 0) ;
+}   
+.HelpLine {
+    background-color: black;
+    margin: 12px;
+    display: flex;
+    border-radius:2px ;
+    padding: 10px !important;
+
+}
+.HelpLine a{
+    color: aliceblue;
+}
+header nav img{
+    height: 100px;
+    width: 100px;
+    margin: 0px 30px;
+}
+
+        
+      
